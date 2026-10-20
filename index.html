@@ -222,6 +222,29 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
+
+    /* Editorial, high-contrast treatment inspired by the reference portfolio. */
+    .nav-wrap { background: light-dark(rgba(244,245,239,.96), rgba(16,21,18,.96)); }
+    .hero { padding-top: 30px; }
+    .hero-panel { border-radius: 8px; min-height: 520px; background: light-dark(#17211D, #0D120F); }
+    .hero h1 { letter-spacing: -.075em; }
+    .hero h1 span { text-decoration: underline; text-decoration-color: rgba(201,244,106,.55); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+    .brand-mark { border-radius: 4px; }
+    .nav-links .nav-cta, .btn { border-radius: 5px; }
+    .ticker { padding-block: 21px; }
+    .ticker-track { justify-content: flex-start; width: max-content; animation: portfolio-marquee 24s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    @keyframes portfolio-marquee { from { transform: translateX(0); } to { transform: translateX(-25%); } }
+    .project-card { border-radius: 8px; border-top: 3px solid var(--site-primary); }
+    .project-symbol, .skill-icon { border-radius: 5px; }
+    .skill-group { border-radius: 8px; }
+    .fact { border-radius: 8px; }
+    .contact-panel { border-radius: 8px; }
+    .cert { border-radius: 5px; }
+    @media (max-width: 650px) {
+      .hero-panel { border-radius: 7px; }
+      .ticker-track { animation-duration: 18s; }
+    }
   </style>
 </head>
 <body>
@@ -246,9 +269,9 @@
       <div class="hero-panel">
         <div class="hero-copy">
           <div class="availability"><span class="pulse" aria-hidden="true"></span> Open to SDE internship opportunities</div>
-          <div class="eyebrow">Computer Science Engineering</div>
-          <h1 id="heroTitle">Hi, I'm<br><span>Abhishek Gupta.</span></h1>
-          <p class="hero-lede">I build thoughtful software, explore algorithms, and turn practical problems into useful systems — from backend platforms to AI-powered applications.</p>
+          <div class="eyebrow">Computer Science Engineering · Chandigarh University</div>
+          <h1 id="heroTitle">Curious mind.<br><span>Code in progress.</span></h1>
+          <p class="hero-lede">I'm Abhishek Gupta — a CSE undergraduate exploring software engineering, data structures, and applied AI. I like turning ideas into practical projects that connect technology with real-world needs.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
             <a class="btn btn-ghost" href="mailto:abisek98059@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
@@ -269,7 +292,7 @@
 
     <div class="ticker" aria-label="Areas of focus">
       <div class="ticker-track">
-        <span>Clean code</span><span>Data structures</span><span>Backend systems</span><span>Applied AI</span><span>Product thinking</span>
+        <span>Software engineering</span><span>Data structures</span><span>Applied AI</span><span>Community impact</span><span>Learning by building</span><span>Software engineering</span><span>Data structures</span><span>Applied AI</span><span>Community impact</span><span>Learning by building</span>
       </div>
     </div>
 
@@ -280,11 +303,11 @@
           <h2 id="aboutTitle">Curious by nature.<br>Engineer by practice.</h2>
         </div>
         <div class="about-copy">
-          <p>I'm a Computer Science Engineering undergraduate at Chandigarh University, focused on building strong software engineering fundamentals and applying them to real-world projects.</p>
-          <p>My interests span data structures and algorithms, object-oriented programming, APIs, databases, and machine learning. I enjoy breaking down difficult problems, comparing approaches, and building systems that are useful beyond a classroom demo.</p>
-          <p>I'm currently looking for an SDE internship where I can contribute, learn engineering best practices, and grow alongside a team building reliable software.</p>
+          <p>I'm a Computer Science Engineering undergraduate at Chandigarh University, building my foundation in programming, object-oriented design, data structures, and problem solving.</p>
+          <p>I'm especially interested in the overlap between AI and practical engineering: how neural networks work, how software can support communities, and how small tools can make everyday tasks easier. My work and learning span research writing, community-focused initiatives, and Python project ideas.</p>
+          <p>I'm looking for an opportunity to learn from experienced engineers, contribute thoughtfully to a team, and keep improving by building, testing, and iterating.</p>
           <div class="focus-list" aria-label="Core interests">
-            <span class="tag">Problem solving</span><span class="tag">Full-stack development</span><span class="tag">Backend engineering</span><span class="tag">Machine learning</span><span class="tag">Team collaboration</span>
+            <span class="tag">Python</span><span class="tag">Data structures & algorithms</span><span class="tag">Object-oriented programming</span><span class="tag">AI & neural networks</span><span class="tag">Community problem solving</span>
           </div>
           <div class="quick-facts">
             <div class="fact"><strong>8.32/10</strong><span>Current CGPA</span></div>
@@ -299,40 +322,40 @@
       <div class="container">
         <div class="section-heading">
           <div><div class="eyebrow">Selected work</div><h2 id="projectsTitle" style="margin-top:16px">Projects with a purpose.</h2></div>
-          <p class="section-note">A mix of algorithmic exploration, developer tooling, financial workflows, and applied AI. These projects reflect the areas I'm actively learning and building in.</p>
+          <p class="section-note">Research, community work, and practical software ideas — a snapshot of the problems and technologies I'm exploring as I grow as an engineer.</p>
         </div>
         <div class="project-grid">
           <article class="project-card">
-            <div class="project-top"><span class="project-number">PROJECT 01 / PLATFORM</span><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h4M8 16h8"/></svg></span></div>
-            <div class="project-period">Jan 2026 — Present</div>
-            <h3>Automated Interview Screening & Skill Verification</h3>
-            <p>A coding assessment platform designed to evaluate candidate submissions inside isolated Docker sandboxes and produce recruiter-facing reports.</p>
-            <div class="project-impact">Includes hidden-test evaluation and AST-based plagiarism detection beyond simple string matching.</div>
-            <div class="project-tags"><span>Java</span><span>Python</span><span>Docker</span><span>PostgreSQL</span><span>React</span></div>
+            <div class="project-top"><span class="project-number">PROJECT 01 / RESEARCH</span><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h4M8 16h8"/></svg></span></div>
+            <div class="project-period">Research writing · 2025</div>
+            <h3>Artificial Intelligence & Neural Networks</h3>
+            <p>A research paper exploring foundational AI models, biologically inspired neural architectures, and how neural networks are applied to real-world problems.</p>
+            <div class="project-impact">Focus: connecting core concepts with practical applications and qualitative comparisons of approaches.</div>
+            <div class="project-tags"><span>Artificial intelligence</span><span>Neural networks</span><span>Research</span><span>Technical writing</span></div>
           </article>
           <article class="project-card">
-            <div class="project-top"><span class="project-number">PROJECT 02 / FINTECH</span><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v14H3z"/><path d="M3 10h18M7 15h4"/><circle cx="17" cy="15" r="1"/></svg></span></div>
-            <div class="project-period">Mar 2026 — Present</div>
-            <h3>Smart Expense & Fraud Detection for SMEs</h3>
-            <p>An invoice-processing workflow that extracts bill details with OCR and flags suspicious or duplicate vendor transactions for review.</p>
-            <div class="project-impact">Combines automated receipt extraction, anomaly detection, and a finance-team approval dashboard.</div>
-            <div class="project-tags"><span>Python</span><span>Tesseract OCR</span><span>Isolation Forest</span><span>Spring Boot</span><span>PostgreSQL</span></div>
+            <div class="project-top"><span class="project-number">PROJECT 02 / COMMUNITY</span><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v14H3z"/><path d="M3 10h18M7 15h4"/><circle cx="17" cy="15" r="1"/></svg></span></div>
+            <div class="project-period">Community initiative · Gharuan, Punjab</div>
+            <h3>Community-Based Solid Waste Management</h3>
+            <p>A community development initiative in Gharuan village under the Zero Waste Foundation initiative, focused on improving awareness and local approaches to solid waste management.</p>
+            <div class="project-impact">Focus: practical environmental action, community participation, and sustainable waste-management habits.</div>
+            <div class="project-tags"><span>Sustainability</span><span>Community engagement</span><span>Environmental impact</span></div>
           </article>
           <article class="project-card">
-            <div class="project-top"><span class="project-number">PROJECT 03 / APPLIED AI</span><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-5-2-8-6-8-11 4 0 7 2 8 5 1-5 4-8 8-9 1 7-2 13-8 15Z"/><path d="M12 21v-7"/></svg></span></div>
-            <div class="project-period">Oct 2025 — Feb 2026</div>
-            <h3>AI Crop Disease Detection & Farmer Advisory</h3>
-            <p>A crop-leaf classification workflow using transfer learning, paired with an advisory service designed to make recommendations more accessible.</p>
-            <div class="project-impact">Farmer-facing treatment guidance is designed for Hindi, Punjabi, and English.</div>
-            <div class="project-tags"><span>PyTorch</span><span>CNN</span><span>PlantVillage</span><span>Flask</span><span>Multilingual NLP</span></div>
+            <div class="project-top"><span class="project-number">PROJECT 03 / PYTHON IDEA</span><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-5-2-8-6-8-11 4 0 7 2 8 5 1-5 4-8 8-9 1 7-2 13-8 15Z"/><path d="M12 21v-7"/></svg></span></div>
+            <div class="project-period">Python project idea</div>
+            <h3>Roommate Bill Splitter</h3>
+            <p>A practical tool concept for recording shared expenses, calculating each roommate's share, and keeping track of who owes whom.</p>
+            <div class="project-impact">Learning goals: clear data models, reliable calculations, and a simple workflow for everyday expense tracking.</div>
+            <div class="project-tags"><span>Python</span><span>Problem solving</span><span>Expense tracking</span></div>
           </article>
           <article class="project-card">
-            <div class="project-top"><span class="project-number">PROJECT 04 / ALGORITHMS</span><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="m7 7 4 9m6-9-4 9M7 6h10"/></svg></span></div>
-            <div class="project-period">Aug 2025 — Sep 2025</div>
-            <h3>Shortest Path Finder — Algorithm Comparison</h3>
-            <p>An implementation and comparison of shortest-path algorithms across graphs with different sizes and densities, including negative edge weights.</p>
-            <div class="project-impact">Explores the trade-offs between Dijkstra's and Bellman–Ford algorithms under different graph conditions.</div>
-            <div class="project-tags"><span>DSA</span><span>Graph algorithms</span><span>Dijkstra</span><span>Bellman–Ford</span></div>
+            <div class="project-top"><span class="project-number">PROJECT 04 / IOT EXPLORATION</span><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="m7 7 4 9m6-9-4 9M7 6h10"/></svg></span></div>
+            <div class="project-period">Exploration area · ESP32 + AI</div>
+            <h3>Embedded AI for Everyday Problems</h3>
+            <p>Exploring ESP32-based project directions across environmental monitoring, smart-home ideas, wearables, and student wellness.</p>
+            <div class="project-impact">Goal: learn how sensor data and lightweight prediction could support useful, real-world decisions.</div>
+            <div class="project-tags"><span>ESP32</span><span>IoT</span><span>Sensors</span><span>AI concepts</span></div>
           </article>
         </div>
       </div>
